@@ -15,7 +15,7 @@ const ThemeSettings = () => {
     themeSettings,
     setthemeSettings,
     setMode,
-    setColor
+    setColor,
   } = useStateContext();
 
   return (
@@ -65,7 +65,7 @@ const ThemeSettings = () => {
               name="theme"
               value="Dark"
               className="cursor-pointer"
-              onChange={ setMode }
+              onChange={setMode}
               checked={currentMode === 'Dark'}
             />
             <label htmlFor="dark" className="ml-2 text-md cursor-pointer">
@@ -89,10 +89,12 @@ const ThemeSettings = () => {
                     className="h-10 w-10 rounded-full
                    cursor-pointer"
                     style={{ backgroundColor: item.color }}
-                    onClick={() => setColor(item.color) }
+                    onClick={() => setColor(item.color)}
                   >
                     <BsCheck
-                      className={`ml-2 text-white ${item.color === currentColor ? 'block' : 'hidden'}`}
+                      className={`ml-2 text-white ${
+                        item.color === currentColor ? 'block' : 'hidden'
+                      }`}
                     />
                   </button>
                 </div>
